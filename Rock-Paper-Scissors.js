@@ -111,3 +111,20 @@ updateScoreElement();
 }
 
 updateScoreElement(); // function call
+
+let isAutoPlaying = false ;
+let intervalId ;
+
+function autoplay() {
+    if(!isAutoPlaying) {
+        intervalId = setInterval(function() {
+            const playerMove = computerChoose();
+            const playerMove2 = computerChoose();
+            mainGame(playerMove,playerMove2);
+        },1300);
+        isAutoPlaying = true;
+    } else {
+        clearInterval(intervalId);
+        isAutoPlaying = false;
+    } 
+}

@@ -4,7 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Psper Scissor</title>
-    <link rel="stylesheet" href="Rock-Paper-Scissors.css">
+
+    <style>
+        body{
+            background-color: rgb(25, 25, 25);
+            color: white;
+            font-family: Arial;
+            font-size: 26px;
+        }
+        .title{
+            font-size: 28px;
+        }
+        .move-icon{
+            width: 55px;
+        }
+        .move-icon-button{
+            background-color: transparent;
+            border: 3px solid white;
+            padding: 20px;
+            border-radius: 50px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .js-moves{
+            margin-bottom: 45px;
+        }
+        .js-result{
+            margin-top: 40px;
+        }
+        .Reset-button{
+            padding: 15px 20px 15px 20px;
+            margin-top: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .empty-span{
+            color: transparent;
+            font-size: 60px;
+        }
+        #main-div{
+            margin-left: 5%;
+            margin-top: 5%;
+        }
+    </style>
+
 </head>
 <body>
     <div id="main-div">
@@ -35,8 +82,10 @@
     <p class="js-score"></p>
 
     <button class="Reset-button" onclick="resetScore()">Reset Score</button>
+
+    <button class="Reset-button" onclick="autoplay()">Auto Play</button>
     </div>
 
-    <script src="Rock-Paper-Scissors.js"></script>
+    <script src="12-Rock-Paper-Scissors.js"></script>
 </body>
 </html>
