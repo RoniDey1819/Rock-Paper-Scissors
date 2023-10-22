@@ -8,6 +8,8 @@ ties:0,
 const rockButtonElement = document.querySelector('.Rock-button');
 const paperButtonElement = document.querySelector('.Paper-button');
 const scissorButtonElement = document.querySelector('.Scissor-button');
+const resetButtonElement = document.querySelector('.Reset_button');
+const autoplayButtonElement = document.querySelector('.Autoplay_button');
 
 rockButtonElement.addEventListener('click',() => {
             const computerMove=computerChoose();
@@ -23,7 +25,29 @@ scissorButtonElement.addEventListener('click',() => {
             computerMove=computerChoose();
             myMove='Scissor';
             mainGame(computerMove,myMove);
-})
+});
+resetButtonElement.addEventListener('click',() => resetScore());
+
+autoplayButtonElement.addEventListener('click',() => autoplay());
+
+document.body.addEventListener('keydown',(event) => {
+    const computerMove=computerChoose();
+    console.log(event.key);
+    if(event.key === 'r') {
+        const myMove='Rock';
+        mainGame(computerMove,myMove);
+    } else if(event.key === 'p') {
+        myMove='Paper';
+        mainGame(computerMove,myMove);
+    } else if(event.key === 's') {
+        myMove='Scissor';
+        mainGame(computerMove,myMove);
+    } else if(event.key === 'R') {
+        resetScore();
+    } else if(event.key === 'a') {
+        autoplay();
+    }
+});
 
 function resetScore(){
     score.wins=0;
